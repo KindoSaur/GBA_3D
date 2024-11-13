@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "GBA",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "D:\\Libraries\\DevKitPro\\devkitARM\\bin\\arm-none-eabi-g++",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
