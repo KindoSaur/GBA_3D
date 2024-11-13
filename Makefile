@@ -37,16 +37,16 @@ make: $(BUILD_DIR)/$(TARGET).gba
 
 # Strip and fix header (step 3,4)
 $(BUILD_DIR)/$(TARGET).gba : $(BUILD_DIR)/$(TARGET).elf
-	$(OBJCOPY) -v -O binary $< $@
+	@$(OBJCOPY) -v -O binary $< $@
 	-@D:/Libraries/DevKitPro/tools/bin/gbafix $@
 
 # Link (step 2)
 $(BUILD_DIR)/$(TARGET).elf : $(OBJS)
-	$(LD) $^ $(LDFLAGS) -o $@
+	@$(LD) $^ $(LDFLAGS) -o $@
 
 # Compile (step 1)
 $(BUILD_DIR)/%.o : source/%.cpp $(HEADERS)
-	$(CXX) -c $< $(CXXFLAGS) -o $@
+	@$(CXX) -c $< $(CXXFLAGS) -o $@
 
 # --- Clean -----------------------------------------------------------
 clean : 
