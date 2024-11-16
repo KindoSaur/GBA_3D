@@ -20,5 +20,7 @@
 
 void start_display_controller();
 volatile unsigned short* flip_buffers(volatile unsigned short* buffer);
+void wait_vblank();
+
 
 #endif //GBA_HPP

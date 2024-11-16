@@ -9,6 +9,9 @@ int main() {
 
     unsigned char black = add_color(BLACK);
     unsigned char red = add_color(RED);
+    
+    clear_screen(vid_mem_front, black);
+    clear_screen(vid_mem_back, black);
 
     volatile unsigned short* buffer = vid_mem_back;
 
@@ -18,6 +21,7 @@ int main() {
         posX++;
         put_pixel(buffer, posY, posX, red);
 
+        wait_vblank();
         buffer = flip_buffers(buffer);
     }
 }
